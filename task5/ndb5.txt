@@ -1,0 +1,65 @@
+
+Zbuduj następujące zapytania
+
+1. Wszystkie filmy
+
+MATCH(m:Movie) RETURN m
+
+2. Wszystkie filmy, w których grał Hugo Weaving
+
+MATCH(a:Person {name:'Hugo Weaving'})-[:ACTED_IN]->(m:Movie) RETURN a,m
+
+3. Reżyserzy filmów, w których grał Hugo Weaving
+
+MATCH (p:Person {name:"Hugo Weaving"})-[:ACTED_IN]->(m)<-[:DIRECTED]-(directors)
+RETURN distinct directors.name
+
+4. Wszystkie osoby, z którymi Hugo Weaving grał w tych samych filmach
+
+MATCH (p:Person {name:"Hugo Weaving"})-[:ACTED_IN]->(m)<-[:ACTED_IN]-(actors)
+RETURN actors,m
+
+5. Wszystkie filmy osób, które grały w Matrix
+
+MATCH (m:Movie {title:"The Matrix"})<-[:ACTED_IN]-(actors)-[:ACTED_IN]->(movies) RETURN movies
+
+6. Listę aktorów (aktor = osoba, która grała przynajmniej w jednym filmie) wraz z ilością filmów, w których grali
+
+match (actor:Person)-[:ACTED_IN]->(movies) return actor.name, count(movies) as MoviesCount
+
+7. Listę osób, które napisały scenariusz filmu, które wyreżyserowały wraz z tytułami takich filmów (koniunkcja – ten sam autor scenariusza i reżyser)
+
+match (writer:Person)-[:WROTE]->(movie)<-[:DIRECTED]-(director) where writer = director return writer, director
+
+8. Listę filmów, w których grał zarówno Hugo Weaving jak i Keanu Reeves
+
+MATCH (a1:Person {name:"Hugo Weaving"})-[:ACTED_IN]->(m)<-[:ACTED_IN]-(a2:Person{name:"Keanu Reeves"})
+RETURN m
+
+9. (za 2pkt) Zestaw zapytań powodujących uzupełnienie bazy danych o film 
+Captain America: The First Avenger wraz z uzupełnieniem informacji o reżyserze, 
+scenarzystach i odtwórcach głównych ról 
+(w oparciu o skrócone informacje z IMDB - http://www.imdb.com/title/tt0458339/) 
++ zapytanie pokazujące dodany do bazy film wraz odtwórcami głównych ról, 
+scenarzystą i reżyserem. Plik SVG ma pokazywać wynik ostatniego zapytania.
+
+Uwaga 1: W wypadku zadania 9 dopuszczalne jest wykorzystanie większej niż 1 ilości zapytań
+-- tworzenie nowego filmu 
+CREATE (m:Movie {title: 'Captain America: The First Avenger'})
+-- tworzenie odtwórców głownych ról/aktorów
+CREATE (a1:Person {name:'Chris Evans', born:1989}) RETURN a1
+CREATE (a2:Person {name:'Peggy Carter', born:1989}) RETURN a2
+--- tworzenie reżysera
+CREATE (director:Person {name:'Joe Johnston', born:1980}) RETURN director
+-- tworzenie scenarzystów 
+CREATE (writer1:Person {name:'Christopher Markus', born:1989}) RETURN writer1
+CREATE (writer2:Person {name:'X', born:1989}) RETURN writer2
+
+MATCH
+  (a:Person),
+  (m:Movie)
+WHERE a.name = 'Chris Evans' AND m.name = 'Captain America: The First Avenger'
+CREATE (l)-[r:ACTTED_IN]->(m)
+RETURN type(r)
+
+sa aktorzy ktorzy grali w First Avenger 

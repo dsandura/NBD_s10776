@@ -1,0 +1,90 @@
+﻿[
+  {
+    "writer": {
+"identity": 5,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Andy Wachowski",
+"born": 1967
+      }
+    },
+    "director": {
+"identity": 5,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Andy Wachowski",
+"born": 1967
+      }
+    }
+  },
+  {
+    "writer": {
+"identity": 6,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Lana Wachowski",
+"born": 1965
+      }
+    },
+    "director": {
+"identity": 6,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Lana Wachowski",
+"born": 1965
+      }
+    }
+  },
+  {
+    "writer": {
+"identity": 45,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Cameron Crowe",
+"born": 1957
+      }
+    },
+    "director": {
+"identity": 45,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Cameron Crowe",
+"born": 1957
+      }
+    }
+  },
+  {
+    "writer": {
+"identity": 154,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Nancy Meyers",
+"born": 1949
+      }
+    },
+    "director": {
+"identity": 154,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Nancy Meyers",
+"born": 1949
+      }
+    }
+  }
+]
