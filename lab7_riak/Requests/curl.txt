@@ -1,0 +1,34 @@
+1. 
+curl -i --request PUT 'http://localhost:8098/buckets/s10776/keys/diana' --header 'Content-Type: application/json' --data-raw '{"name": "Diana","surname": "Sandura","age": 15,"country": "Poland"}'
+curl -i --request PUT 'http://localhost:8098/buckets/s10776/keys/jonsnow' --header 'Content-Type: application/json' --data-raw '{"name": "Jon", "surname": "Snow","age": 25,"country": "Westeros"}'
+curl -i --request PUT 'http://localhost:8098/buckets/s10776/keys/aspen' --header 'Content-Type: application/json' --data-raw '{"name": "Aspen","surname": "Sandura","age": 3,"country": "Russia"}'
+curl -i --request PUT 'http://localhost:8098/buckets/s10776/keys/marek' --header 'Content-Type: application/json' --data-raw '{"name": "Marek","surname": "Sandura","age": 13,"country": "Poland"}'
+curl -i --request PUT 'http://localhost:8098/buckets/s10776/keys/lucyna' --header 'Content-Type: application/json' --data-raw '{"name": "Lucyna","surname": "Sandura","age": 17,"country": "Ukraine"}'
+
+2.
+curl -i --request GET 'http://localhost:8098/buckets/s10776/keys/diana'
+
+3.
+curl -i --request PUT 'http://localhost:8098/buckets/s10776/keys/diana' --header 'Content-Type: application/json' --data-raw '{"name": "Diana","surname": "Sandura","age": 15,"country": "Poland", "gender":"F"}'
+
+4.
+curl -i --request PUT 'http://localhost:8098/buckets/s10776/keys/aspen' --header 'Content-Type: application/json' --data-raw '{"name": "Aspen","age": 3,"country": "Russia"}'
+
+5.
+curl -i --request PUT 'http://localhost:8098/buckets/s10776/keys/lucyna' --header 'Content-Type: application/json' --data-raw '{"name": "Lucyna","surname": "Sandura","age": 4,"country": "Ukraine"}'
+
+6.
+curl -i --request DELETE 'http://localhost:8098/buckets/s10776/keys/jonsnow'
+
+7.
+curl -i --request GET 'http://localhost:8098/buckets/s10776/keys/jonsnow'
+
+8.
+curl -i --request POST 'http://localhost:8098/buckets/s10776/keys' --header 'Content-Type: application/json' --data-raw '{"isKeyless": true}'
+
+9.
+curl -i --request GET 'http://localhost:8098/buckets/s10776/keys?keys=true'
+curl -i --request GET 'http://localhost:8098/buckets/s10776/keys/Q9n22vVbjEhBlKzOTG3o21thNgr'
+
+10.
+curl -i --request DELETE 'http://localhost:8098/buckets/s10776/keys/Q9n22vVbjEhBlKzOTG3o21thNgr'

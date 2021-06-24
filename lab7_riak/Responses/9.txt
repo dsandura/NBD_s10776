@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Fri, 18 Jun 2021 09:57:31 GMT
+Content-Type: application/json
+Content-Length: 73
+
+{"keys":["aspen","diana","lucyna","marek","Q9n22vVbjEhBlKzOTG3o21thNgr"]}
+
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI83Vv4Awsn/P8AEUpkzGNlCH/hcIsvCwA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s10776>; rel="up"
+Last-Modified: Fri, 18 Jun 2021 09:50:15 GMT
+ETag: "j9fZ8rj5MubHCtMHlDW0r"
+Date: Fri, 18 Jun 2021 09:58:38 GMT
+Content-Type: application/json
+Content-Length: 17
+
+{isKeyless: true}
