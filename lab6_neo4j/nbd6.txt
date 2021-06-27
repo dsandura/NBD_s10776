@@ -32,12 +32,6 @@ WITH paths, reduce(acc = 0, d IN distanceList  | acc+d) AS distance
 RETURN paths,distance
 ORDER BY distance ASC
 
-tabela tam gdzie ma to sens cvs zamist svg 
-
-pyton biblioteka request najlepiej 
-
-do przyszłej niedzieli 
-
 
 Część 2 – Połączenia lotnicze
 

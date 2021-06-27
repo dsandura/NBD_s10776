@@ -1,0 +1,622 @@
+MongoDB shell version v4.4.6
+connecting to: mongodb://127.0.0.1:27017/nbd?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("2367a770-ff11-4ba1-b473-21b09eef5ec5") }
+MongoDB server version: 4.4.6
+[
+	{
+		"_id" : "MKD",
+		"balSum" : 436912.01
+	},
+	{
+		"_id" : "BYR",
+		"balSum" : 686489.84
+	},
+	{
+		"_id" : "KYD",
+		"balSum" : 16809.66
+	},
+	{
+		"_id" : "LKR",
+		"balSum" : 225111.38999999998
+	},
+	{
+		"_id" : "DJF",
+		"balSum" : 14734.27
+	},
+	{
+		"_id" : "RUB",
+		"balSum" : 8542684.29
+	},
+	{
+		"_id" : "MNT",
+		"balSum" : 639977.48
+	},
+	{
+		"_id" : "SSP",
+		"balSum" : 42256.53
+	},
+	{
+		"_id" : "SAR",
+		"balSum" : 161706
+	},
+	{
+		"_id" : "ZAR",
+		"balSum" : 932463.66
+	},
+	{
+		"_id" : "MXN",
+		"balSum" : 1551459.27
+	},
+	{
+		"_id" : "RWF",
+		"balSum" : 43299.96
+	},
+	{
+		"_id" : "MUR",
+		"balSum" : 182130.48
+	},
+	{
+		"_id" : "IRR",
+		"balSum" : 804397.05
+	},
+	{
+		"_id" : "MMK",
+		"balSum" : 226778.17
+	},
+	{
+		"_id" : "SEK",
+		"balSum" : 3706221.0100000002
+	},
+	{
+		"_id" : "CNY",
+		"balSum" : 27489383.66
+	},
+	{
+		"_id" : "TJS",
+		"balSum" : 177401.05
+	},
+	{
+		"_id" : "SOS",
+		"balSum" : 82203.48
+	},
+	{
+		"_id" : "LRD",
+		"balSum" : 54883.45
+	},
+	{
+		"_id" : "BDT",
+		"balSum" : 294843.38
+	},
+	{
+		"_id" : "TOP",
+		"balSum" : 18424.47
+	},
+	{
+		"_id" : "GNF",
+		"balSum" : 73222.48
+	},
+	{
+		"_id" : "MDL",
+		"balSum" : 173318.73
+	},
+	{
+		"_id" : "NPR",
+		"balSum" : 146606.65
+	},
+	{
+		"_id" : "KHR",
+		"balSum" : 100447.58
+	},
+	{
+		"_id" : "FJD",
+		"balSum" : 9321.43
+	},
+	{
+		"_id" : "LTL",
+		"balSum" : 220627.42
+	},
+	{
+		"_id" : "SBD",
+		"balSum" : 9983
+	},
+	{
+		"_id" : "RON",
+		"balSum" : 11557.6
+	},
+	{
+		"_id" : "LAK",
+		"balSum" : 86305.05
+	},
+	{
+		"_id" : "BWP",
+		"balSum" : 146972.04
+	},
+	{
+		"_id" : "NZD",
+		"balSum" : 338447.54
+	},
+	{
+		"_id" : "SYP",
+		"balSum" : 501467.35
+	},
+	{
+		"_id" : "AOA",
+		"balSum" : 67582.8
+	},
+	{
+		"_id" : "BND",
+		"balSum" : 7782.66
+	},
+	{
+		"_id" : "MOP",
+		"balSum" : 5337.77
+	},
+	{
+		"_id" : "IDR",
+		"balSum" : 15672754.8
+	},
+	{
+		"_id" : "BRL",
+		"balSum" : 5619297.18
+	},
+	{
+		"_id" : "CZK",
+		"balSum" : 2644211.16
+	},
+	{
+		"_id" : "GEL",
+		"balSum" : 157276.96
+	},
+	{
+		"_id" : "GYD",
+		"balSum" : 13053.5
+	},
+	{
+		"_id" : "CLP",
+		"balSum" : 394822.02
+	},
+	{
+		"_id" : "PYG",
+		"balSum" : 291487.63
+	},
+	{
+		"_id" : "AZN",
+		"balSum" : 394880.17
+	},
+	{
+		"_id" : "JOD",
+		"balSum" : 214942.07
+	},
+	{
+		"_id" : "TWD",
+		"balSum" : 37654
+	},
+	{
+		"_id" : "TMT",
+		"balSum" : 113099.62
+	},
+	{
+		"_id" : "CHF",
+		"balSum" : 108940.64
+	},
+	{
+		"_id" : "EGP",
+		"balSum" : 533748.5
+	},
+	{
+		"_id" : "BHD",
+		"balSum" : 22698.46
+	},
+	{
+		"_id" : "MZN",
+		"balSum" : 92068.64
+	},
+	{
+		"_id" : "JMD",
+		"balSum" : 201447.71
+	},
+	{
+		"_id" : "FKP",
+		"balSum" : 5118.97
+	},
+	{
+		"_id" : "NAD",
+		"balSum" : 55420.34
+	},
+	{
+		"_id" : "PAB",
+		"balSum" : 363643.61
+	},
+	{
+		"_id" : "BTN",
+		"balSum" : 37711.08
+	},
+	{
+		"_id" : "MYR",
+		"balSum" : 666533.65
+	},
+	{
+		"_id" : "GMD",
+		"balSum" : 157963.9
+	},
+	{
+		"_id" : "NIO",
+		"balSum" : 247382.14
+	},
+	{
+		"_id" : "KMF",
+		"balSum" : 138004.7
+	},
+	{
+		"_id" : "ANG",
+		"balSum" : 21354.39
+	},
+	{
+		"_id" : "HNL",
+		"balSum" : 817695.24
+	},
+	{
+		"_id" : "KPW",
+		"balSum" : 222518.63
+	},
+	{
+		"_id" : "LSL",
+		"balSum" : 26269.07
+	},
+	{
+		"_id" : "PGK",
+		"balSum" : 61445.270000000004
+	},
+	{
+		"_id" : "PKR",
+		"balSum" : 687770.55
+	},
+	{
+		"_id" : "ILS",
+		"balSum" : 762243.16
+	},
+	{
+		"_id" : "AFN",
+		"balSum" : 661834.75
+	},
+	{
+		"_id" : "TZS",
+		"balSum" : 603855.99
+	},
+	{
+		"_id" : "DOP",
+		"balSum" : 538809.21
+	},
+	{
+		"_id" : "ZWL",
+		"balSum" : 142978.86
+	},
+	{
+		"_id" : "MAD",
+		"balSum" : 510936.11
+	},
+	{
+		"_id" : "BZD",
+		"balSum" : 24296.690000000002
+	},
+	{
+		"_id" : "UYU",
+		"balSum" : 237715.67
+	},
+	{
+		"_id" : "JPY",
+		"balSum" : 2589761.28
+	},
+	{
+		"_id" : "BBD",
+		"balSum" : 26720.5
+	},
+	{
+		"_id" : "ISK",
+		"balSum" : 39048.74
+	},
+	{
+		"_id" : "SGD",
+		"balSum" : 12820.48
+	},
+	{
+		"_id" : "BOB",
+		"balSum" : 257433.54
+	},
+	{
+		"_id" : "GTQ",
+		"balSum" : 588368.85
+	},
+	{
+		"_id" : "DZD",
+		"balSum" : 12166.2
+	},
+	{
+		"_id" : "ALL",
+		"balSum" : 651597.87
+	},
+	{
+		"_id" : "MWK",
+		"balSum" : 88106.83
+	},
+	{
+		"_id" : "THB",
+		"balSum" : 2093293.6
+	},
+	{
+		"_id" : "PHP",
+		"balSum" : 8249268.03
+	},
+	{
+		"_id" : "VND",
+		"balSum" : 1399979.89
+	},
+	{
+		"_id" : "LBP",
+		"balSum" : 43326.06
+	},
+	{
+		"_id" : "HUF",
+		"balSum" : 165192.16
+	},
+	{
+		"_id" : "ETB",
+		"balSum" : 269686.62
+	},
+	{
+		"_id" : "GHS",
+		"balSum" : 83159.05
+	},
+	{
+		"_id" : "XCD",
+		"balSum" : 168150.01
+	},
+	{
+		"_id" : "CDF",
+		"balSum" : 178097.37
+	},
+	{
+		"_id" : "HRK",
+		"balSum" : 689403.5
+	},
+	{
+		"_id" : "WST",
+		"balSum" : 30739.64
+	},
+	{
+		"_id" : "UAH",
+		"balSum" : 2511119.47
+	},
+	{
+		"_id" : "PEN",
+		"balSum" : 2367249.34
+	},
+	{
+		"_id" : "XAF",
+		"balSum" : 740558.96
+	},
+	{
+		"_id" : "AED",
+		"balSum" : 52973.33
+	},
+	{
+		"_id" : "BSD",
+		"balSum" : 55361.39
+	},
+	{
+		"_id" : "UZS",
+		"balSum" : 330309.61
+	},
+	{
+		"_id" : "PLN",
+		"balSum" : 5074340
+	},
+	{
+		"_id" : "KES",
+		"balSum" : 269798.11
+	},
+	{
+		"_id" : "HTG",
+		"balSum" : 215992.13
+	},
+	{
+		"_id" : "KGS",
+		"balSum" : 176827.79
+	},
+	{
+		"_id" : "STD",
+		"balSum" : 4854.36
+	},
+	{
+		"_id" : "OMR",
+		"balSum" : 87008.08
+	},
+	{
+		"_id" : "CVE",
+		"balSum" : 46538.51
+	},
+	{
+		"_id" : "COP",
+		"balSum" : 1976194.79
+	},
+	{
+		"_id" : "IQD",
+		"balSum" : 167531.82
+	},
+	{
+		"_id" : "LYD",
+		"balSum" : 197545.65
+	},
+	{
+		"_id" : "NOK",
+		"balSum" : 760113.61
+	},
+	{
+		"_id" : "USD",
+		"balSum" : 104098231.04
+	},
+	{
+		"_id" : "ARS",
+		"balSum" : 1944521.25
+	},
+	{
+		"_id" : "BMD",
+		"balSum" : 5189
+	},
+	{
+		"_id" : "NGN",
+		"balSum" : 1293568.34
+	},
+	{
+		"_id" : "XPF",
+		"balSum" : 132926.01
+	},
+	{
+		"_id" : "KZT",
+		"balSum" : 584923.2
+	},
+	{
+		"_id" : "MGA",
+		"balSum" : 377675.55
+	},
+	{
+		"_id" : "VUV",
+		"balSum" : 23188.93
+	},
+	{
+		"_id" : "ZMW",
+		"balSum" : 160940.53
+	},
+	{
+		"_id" : "TRY",
+		"balSum" : 18414.53
+	},
+	{
+		"_id" : "RSD",
+		"balSum" : 817403.54
+	},
+	{
+		"_id" : "YER",
+		"balSum" : 583657.38
+	},
+	{
+		"_id" : "DKK",
+		"balSum" : 222452.28
+	},
+	{
+		"_id" : "CUP",
+		"balSum" : 514413.88
+	},
+	{
+		"_id" : "BGN",
+		"balSum" : 496641.83
+	},
+	{
+		"_id" : "SDG",
+		"balSum" : 127317.75
+	},
+	{
+		"_id" : "QAR",
+		"balSum" : 36358.92
+	},
+	{
+		"_id" : "XOF",
+		"balSum" : 934043.61
+	},
+	{
+		"_id" : "MVR",
+		"balSum" : 32068.850000000002
+	},
+	{
+		"_id" : "SCR",
+		"balSum" : 14797.58
+	},
+	{
+		"_id" : "SRD",
+		"balSum" : 19686.77
+	},
+	{
+		"_id" : "AUD",
+		"balSum" : 242667.03
+	},
+	{
+		"_id" : "AMD",
+		"balSum" : 602964.09
+	},
+	{
+		"_id" : "TND",
+		"balSum" : 325755.9
+	},
+	{
+		"_id" : "KWD",
+		"balSum" : 82506.07
+	},
+	{
+		"_id" : "BIF",
+		"balSum" : 45782.33
+	},
+	{
+		"_id" : "SZL",
+		"balSum" : 59113.090000000004
+	},
+	{
+		"_id" : "UGX",
+		"balSum" : 345203.25
+	},
+	{
+		"_id" : "HKD",
+		"balSum" : 23023.02
+	},
+	{
+		"_id" : "KRW",
+		"balSum" : 433497.06
+	},
+	{
+		"_id" : "BAM",
+		"balSum" : 415965.47
+	},
+	{
+		"_id" : "SLL",
+		"balSum" : 116224.9
+	},
+	{
+		"_id" : "CAD",
+		"balSum" : 1973241.6
+	},
+	{
+		"_id" : "AWG",
+		"balSum" : 7282.73
+	},
+	{
+		"_id" : "ERN",
+		"balSum" : 21598.47
+	},
+	{
+		"_id" : "GBP",
+		"balSum" : 243512.86
+	},
+	{
+		"_id" : "MRO",
+		"balSum" : 44471.32
+	},
+	{
+		"_id" : "INR",
+		"balSum" : 24172.940000000002
+	},
+	{
+		"_id" : "VEF",
+		"balSum" : 632332.13
+	},
+	{
+		"_id" : "TTD",
+		"balSum" : 44044.89
+	},
+	{
+		"_id" : "EUR",
+		"balSum" : 16766187.02
+	},
+	{
+		"_id" : "CRC",
+		"balSum" : 334544.06
+	}
+]
