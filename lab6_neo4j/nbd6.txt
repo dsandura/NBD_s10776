@@ -46,12 +46,6 @@ ORDER BY flightsCount DESC
 
 5. Znajdź wszystkie porty lotnicze, do których da się dolecieć (bezpośrednio lub z przesiadkami) z Los Angeles (LAX) wydając mniej niż 3000
 -- nowa relacja 
-MATCH (o:Airport)-[fo:ORIGIN]-(f)-[fd:DESTINATION]-(d:Airport)
-WITH o, f, d
-MATCH (f)-[]-(t:Ticket)
-MERGE (o)-[r:FLY_TO_TICKET {idf:id(f), idt:id(t), class: t.class}]->(d)
-RETURN o, r, d, f, t
-
 MATCH (originAirport:Airport)-[originFlight:ORIGIN]-(flight:Flight)-[destinationFlight:DESTINATION]-(destinationAirport:Airport)
 WITH originAirport, destinationAirport, flight
 MATCH (flight)-[]-(ticket:Ticket)
