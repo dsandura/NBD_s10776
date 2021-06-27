@@ -1,5 +1,5 @@
 let insert = db.people.insertOne({
-    "sex" : "Feale",
+    "sex" : "Female",
     "first_name" : "Diana",
     "last_name" : "Sandura",
     "job" : "Programmer",
