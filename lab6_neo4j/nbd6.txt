@@ -44,6 +44,10 @@ Część 2 – Połączenia lotnicze
 Zaimportuj dane uruchamiając skrypt task3.cypher. Napisz następujące zapytania:
 
 4. Uszereguj porty lotnicze według ilości rozpoczynających się w nich lotów
+MATCH (a:Airport)<-[:ORIGIN]-(f:Flight)
+WITH a, count(f) as flightsCount
+RETURN a, flightsCount
+ORDER BY flightsCount DESC
 
 5. Znajdź wszystkie porty lotnicze, do których da się dolecieć (bezpośrednio lub z przesiadkami) z Los Angeles (LAX) wydając mniej niż 3000
 
