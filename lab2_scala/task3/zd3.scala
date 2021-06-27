@@ -6,6 +6,7 @@ object zd3 {
     case Osoba("Szymon", _) => s"Witaj, ${o.imie}"
     case Osoba("Diana", _) => s"Cześć, ${o.imie}"
     case Osoba("Aspen", _) => s"Howdy, ${o.imie}"
+    case default =>  s"Hello, ${o.imie}"
   }
     println(textToDisplay)
   }
@@ -15,6 +16,7 @@ object zd3 {
       new Osoba("Szymon","Sandura"),
       new Osoba("Diana","Sandura"),
       new Osoba("Aspen", "Sandura")
+      new Osoba("Jon", "Snow");
     )
     peopleList.foreach(o => displayWelcomeMessage(o));
   }

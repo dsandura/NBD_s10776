@@ -38,18 +38,77 @@ Część 2 – Połączenia lotnicze
 Zaimportuj dane uruchamiając skrypt task3.cypher. Napisz następujące zapytania:
 
 4. Uszereguj porty lotnicze według ilości rozpoczynających się w nich lotów
+
 MATCH (a:Airport)<-[:ORIGIN]-(f:Flight)
 WITH a, count(f) as flightsCount
 RETURN a, flightsCount
 ORDER BY flightsCount DESC
 
 5. Znajdź wszystkie porty lotnicze, do których da się dolecieć (bezpośrednio lub z przesiadkami) z Los Angeles (LAX) wydając mniej niż 3000
+-- nowa relacja 
+MATCH (o:Airport)-[fo:ORIGIN]-(f)-[fd:DESTINATION]-(d:Airport)
+WITH o, f, d
+MATCH (f)-[]-(t:Ticket)
+MERGE (o)-[r:FLY_TO_TICKET {idf:id(f), idt:id(t), class: t.class}]->(d)
+RETURN o, r, d, f, t
+
+MATCH (originAirport:Airport)-[originFlight:ORIGIN]-(flight:Flight)-[destinationFlight:DESTINATION]-(destinationAirport:Airport)
+WITH originAirport, destinationAirport, flight
+MATCH (flight)-[]-(ticket:Ticket)
+MERGE (originAirport)-[r:FLIGHT_TICKET {idFlight:id(flight), idTicket:id(ticket), price: ticket.price, class: ticket.class}]->(destinationAirport)
+RETURN originAirport, r, destinationAirport,  flight, ticket
+
+MATCH findFlightsBelow3000 = ((originAirport:Airport {name: "LAX"})-[:FLIGHT_TICKET*..3]->(destinationAirport:Airport))
+WHERE ALL(x IN NODES(findFlightsBelow3000) WHERE SINGLE(y IN NODES(findFlightsBelow3000) WHERE y = x))
+WITH findFlightsBelow3000, relationships(findFlightsBelow3000) AS relation_findFlightsBelow3000
+UNWIND relation_findFlightsBelow3000 As r
+MATCH (ticket)
+WHERE ID(ticket) = r.idTicket
+WITH findFlightsBelow3000, ticket
+WITH findFlightsBelow3000, sum(ticket.price) AS sumPrice
+WHERE sumPrice < 3000
+RETURN findFlightsBelow3000, sumPrice
+ORDER BY sumPrice DESC
 
 6. Uszereguj połączenia, którymi można dotrzeć z Los Angeles (LAX) do Dayton (DAY) według ceny biletów
 
+-- zmienilam w queries sprawdzanie DAY na LAS bo DAY nie ma w bazie i na zajeciach wspominal Pan ze mozna przetestowac dla innego lotniska :)
+
+MATCH findFlightsBetweeenLAX_DAY = ((o:Airport {name: "LAX"})-[:FLIGHT_TICKET*..3]->(d:Airport {name: "LAS"}))
+WHERE ALL(x IN NODES(findFlightsBetweeenLAX_DAY) WHERE SINGLE(y IN NODES(findFlightsBetweeenLAX_DAY) WHERE y = x))
+WITH findFlightsBetweeenLAX_DAY, relationships(findFlightsBetweeenLAX_DAY) AS relation_findFlightsBetweeenLAX_DAY
+UNWIND relation_findFlightsBetweeenLAX_DAY AS r
+MATCH (ticket)
+WHERE ID(ticket) = r.idTicket
+WITH findFlightsBetweeenLAX_DAY, r, ticket
+WITH findFlightsBetweeenLAX_DAY, sum(ticket.price) AS sumPrice
+RETURN findFlightsBetweeenLAX_DAY, sumPrice ORDER BY sumPrice DESC
+
 7. Znajdź najtańsze połączenie z Los Angeles (LAX) do Dayton (DAY)
 
+MATCH findFlightsBetweeenLAX_LAS = ((o:Airport {name: "LAX"})-[:FLIGHT_TICKET*..3]->(d:Airport {name: "LAS"}))
+WHERE ALL(x IN NODES(findFlightsBetweeenLAX_LAS) WHERE SINGLE(y IN NODES(findFlightsBetweeenLAX_LAS) WHERE y = x))
+WITH findFlightsBetweeenLAX_LAS, relationships(findFlightsBetweeenLAX_LAS) AS relation_findFlightsBetweeenLAX_LAS
+UNWIND relation_findFlightsBetweeenLAX_LAS AS r
+MATCH (ticket)
+WHERE ID(ticket) = r.idTicket
+WITH findFlightsBetweeenLAX_LAS, r, ticket
+WITH findFlightsBetweeenLAX_LAS, sum(ticket.price) AS sumPrice
+RETURN findFlightsBetweeenLAX_LAS, sumPrice ORDER BY sumPrice ASC
+LIMIT 1
+
 8. Znajdź najtańsze połączenie z Los Angeles (LAX) do Dayton (DAY) w klasie biznes
+
+MATCH findFlightsBetweeenLAX_LAS = ((o:Airport {name: "LAX"})-[:FLIGHT_TICKET*..3 {class: "business"}]->(d:Airport {name: "LAS"}))
+WHERE ALL(x IN NODES(findFlightsBetweeenLAX_LAS) WHERE SINGLE(y IN NODES(findFlightsBetweeenLAX_LAS) WHERE y = x))
+WITH findFlightsBetweeenLAX_LAS, relationships(findFlightsBetweeenLAX_LAS) AS relation_findFlightsBetweeenLAX_LAS
+UNWIND relation_findFlightsBetweeenLAX_LAS AS r
+MATCH (ticket)
+WHERE ID(ticket) = r.idTicket
+WITH findFlightsBetweeenLAX_LAS, r, ticket
+WITH findFlightsBetweeenLAX_LAS, sum(ticket.price) AS sumPrice
+RETURN findFlightsBetweeenLAX_LAS, sumPrice ORDER BY sumPrice ASC
+LIMIT 1
 
 9. Uszereguj linie lotnicze według ilości miast, pomiędzy którymi oferują połączenia (unikalnych miast biorących udział w relacjach :ORIGIN i :DESTINATION węzłów typu Flight obsługiwanych przez daną linię)
 

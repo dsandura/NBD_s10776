@@ -1,0 +1,60 @@
+﻿[
+  {
+    "findFlightsBetweeenLAX_LAS": {
+"start": {
+"identity": 5,
+"labels": [
+          "Airport"
+        ],
+"properties": {
+"name": "LAX"
+        }
+      },
+"end": {
+"identity": 25,
+"labels": [
+          "Airport"
+        ],
+"properties": {
+"name": "LAS"
+        }
+      },
+"segments": [
+        {
+          "start": {
+"identity": 5,
+"labels": [
+              "Airport"
+            ],
+"properties": {
+"name": "LAX"
+            }
+          },
+          "relationship": {
+"identity": 2070,
+"start": 5,
+"end": 25,
+"type": "FLIGHT_TICKET",
+"properties": {
+"idTicket": 661,
+"idFlight": 659,
+"class": "business",
+"price": 249
+            }
+          },
+          "end": {
+"identity": 25,
+"labels": [
+              "Airport"
+            ],
+"properties": {
+"name": "LAS"
+            }
+          }
+        }
+      ],
+"length": 1.0
+    },
+    "sumPrice": 249
+  }
+]
