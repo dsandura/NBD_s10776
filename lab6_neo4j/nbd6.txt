@@ -107,3 +107,14 @@ LIMIT 1
 9. Uszereguj linie lotnicze według ilości miast, pomiędzy którymi oferują połączenia (unikalnych miast biorących udział w relacjach :ORIGIN i :DESTINATION węzłów typu Flight obsługiwanych przez daną linię)
 
 10. Znajdź najtańszą trasę łączącą 3 różne porty lotnicze
+
+MATCH findCheapest = ((o:Airport)-[:FLIGHT_TICKET *2]->(d:Airport))
+WHERE ALL(x IN NODES(findCheapest) WHERE SINGLE(y IN NODES(findCheapest) WHERE y = x))
+WITH findCheapest, relationships(findCheapest) AS relation_p
+UNWIND relation_p As r
+MATCH (ticket)
+WHERE ID(ticket) = r.idTicket
+WITH findCheapest, sum(ticket.price) AS PriceSum
+RETURN findCheapest, PriceSum
+ORDER BY PriceSum ASC
+LIMIT 1
