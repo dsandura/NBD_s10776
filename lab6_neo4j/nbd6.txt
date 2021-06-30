@@ -106,6 +106,10 @@ LIMIT 1
 
 9. Uszereguj linie lotnicze według ilości miast, pomiędzy którymi oferują połączenia (unikalnych miast biorących udział w relacjach :ORIGIN i :DESTINATION węzłów typu Flight obsługiwanych przez daną linię)
 
+MATCH (origin:Airport)-[:ORIGIN]-(flight:Flight)-[:DESTINATION]-(destination:Airport)
+RETURN flight.airline, count(origin) AS CitiesCount 
+ORDER BY CitiesCount ASC
+
 10. Znajdź najtańszą trasę łączącą 3 różne porty lotnicze
 
 MATCH findCheapest = ((o:Airport)-[:FLIGHT_TICKET *2]->(d:Airport))
